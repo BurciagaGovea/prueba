@@ -29,4 +29,4 @@ def vision(request):
 #     return redirect(request, 'inicio')
 
 def error404_2(request, exception):
-    return render(request, 'mainapp/404.html')
+    return render(request, 'mainapp/404.html', status=404)

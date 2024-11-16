@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3^jf$)0c6oz8rm6io%#$m&%&%ju#a3-y6lj43nge!-++sdj+yp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False #Deber ser false para lo del 404 y eso
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -116,16 +116,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "mainapp/static",
 ]
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-handler404 = 'mainapp.views.error404_2'
+handler404 = 'mainapp.views.error404_2' #para decir que queremos usar el 404 personalizaod
